@@ -366,6 +366,12 @@ void  Adafruit_SSD1351::invert(boolean v) {
    }
  }
 
+void Adafruit_SSD1351::setStartLine(uint8_t y)
+{
+  writeCommand(SSD1351_CMD_STARTLINE);
+  writeData(y);
+}
+
 /********************************* low level pin initialization */
 
 Adafruit_SSD1351::Adafruit_SSD1351(uint8_t cs, uint8_t rs, uint8_t sid, uint8_t sclk, uint8_t rst) : Adafruit_GFX(SSD1351WIDTH, SSD1351HEIGHT) {
